@@ -29,6 +29,8 @@ xcodegen generate
 open HabitSwap.xcodeproj
 ```
 
+拡張の `Info.plist`（`NSExtension` の extension point 指定を含む）は `project.yml` から生成されるため、リポジトリには置かない。
+
 Signing はターゲットごとに自分のTeamを設定し、App Group `group.jp.tetris-solution.habitswap` と Family Controls capability を本体アプリと3つの拡張すべてに付与する。
 
 ## 構成

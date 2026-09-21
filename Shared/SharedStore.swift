@@ -7,7 +7,7 @@ enum AppGroup {
 
 /// Storage shared between the app and its Screen Time extensions.
 final class SharedStore {
-    static let shared = SharedStore()
+    nonisolated(unsafe) static let shared = SharedStore()
 
     private let defaults: UserDefaults
     private let encoder = JSONEncoder()

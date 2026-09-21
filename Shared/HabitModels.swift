@@ -108,12 +108,14 @@ struct AppConfiguration: Codable {
     var graceMinutes: Int
     var onboardingCompleted: Bool
 
-    static let `default` = AppConfiguration(
-        selection: FamilyActivitySelection(),
-        rules: [],
-        graceMinutes: 5,
-        onboardingCompleted: false
-    )
+    static var `default`: AppConfiguration {
+        AppConfiguration(
+            selection: FamilyActivitySelection(),
+            rules: [],
+            graceMinutes: 5,
+            onboardingCompleted: false
+        )
+    }
 
     func habit(for token: ApplicationToken) -> Habit? {
         rules.first { $0.token == token }?.habit

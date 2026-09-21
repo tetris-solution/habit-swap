@@ -25,6 +25,7 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: jp.tetris-solution.habitswap
+        GENERATE_INFOPLIST_FILE: YES
         INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
         INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: YES
         INFOPLIST_KEY_CFBundleDisplayName: HabitSwap
@@ -41,6 +42,11 @@ targets:
       - Shared
     info:
       path: ShieldConfigurationExtension/Info.plist
+      properties:
+        CFBundlePackageType: XPC!
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.ManagedSettingsUI.shield-configuration-service
+          NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).ShieldConfigurationExtension
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: jp.tetris-solution.habitswap.shieldconfiguration
@@ -53,6 +59,11 @@ targets:
       - Shared
     info:
       path: ShieldActionExtension/Info.plist
+      properties:
+        CFBundlePackageType: XPC!
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.ManagedSettings.shield-action-service
+          NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).ShieldActionExtension
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: jp.tetris-solution.habitswap.shieldaction
@@ -65,6 +76,11 @@ targets:
       - Shared
     info:
       path: DeviceActivityMonitorExtension/Info.plist
+      properties:
+        CFBundlePackageType: XPC!
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.deviceactivity.monitor-extension
+          NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).DeviceActivityMonitorExtension
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: jp.tetris-solution.habitswap.deviceactivitymonitor

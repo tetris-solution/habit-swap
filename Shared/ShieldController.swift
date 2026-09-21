@@ -3,11 +3,11 @@ import Foundation
 import ManagedSettings
 
 extension ManagedSettingsStore.Name {
-    static let habitSwap = Self("habitswap")
+    nonisolated(unsafe) static let habitSwap = Self("habitswap")
 }
 
 extension DeviceActivityName {
-    static let graceWindow = Self("habitswap.grace")
+    nonisolated(unsafe) static let graceWindow = Self("habitswap.grace")
 }
 
 /// Minimum length Device Activity accepts for a monitored interval.
@@ -15,7 +15,7 @@ let minimumGraceMinutes = 15
 
 /// Applies and refreshes the shields, shared by the app and the extensions.
 final class ShieldController {
-    static let shared = ShieldController()
+    nonisolated(unsafe) static let shared = ShieldController()
 
     private let store = ManagedSettingsStore(named: .habitSwap)
     private let sharedStore: SharedStore
