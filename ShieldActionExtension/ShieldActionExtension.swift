@@ -13,7 +13,10 @@ final class ShieldActionExtension: ShieldActionDelegate {
         case .primaryButtonPressed:
             store.pendingHabit = PendingHabit(token: application, requestedAt: Date())
             completionHandler(.openParentalControlsApp)
-        case .secondaryButtonPressed:
+        case .secondaryButtonPressed,
+             .firstSecondarySubmenuItemPressed,
+             .secondSecondarySubmenuItemPressed,
+             .thirdSecondarySubmenuItemPressed:
             completionHandler(.close)
         @unknown default:
             completionHandler(.close)
